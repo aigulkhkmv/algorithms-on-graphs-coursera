@@ -55,7 +55,17 @@ def find_scc(graph, post_list):
                 return 0
 
 
+def magic_check(graph):
+    for parent, children in enumerate(graph, 0):
+        for child in children:
+            if parent > child:
+                return False
+    return True
+
+
 def acyclic(adj):
+    if magic_check(adj):
+        return 0
     visit_list = [False] * len(adj)
     reverse_graph = reverse(adj)
 

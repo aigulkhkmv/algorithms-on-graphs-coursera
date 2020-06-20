@@ -52,4 +52,4 @@ if __name__ == "__main__":
         adj[a - 1].append(b - 1)
     order = toposort(adj)
     for x in order:
-        print(x + 1)
+        print(x + 1, end=" ")

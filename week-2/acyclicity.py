@@ -2,7 +2,6 @@
 
 import sys
 
-
 def reverse(graph):
     new_chi = [[] for i in graph]
     for parent_num, old_chis_ in enumerate(graph, 0):
@@ -49,10 +48,9 @@ def find_scc(graph, post_list):
             graph.visited[max_index] = True
             start_clock = graph.clock
             graph.explore(max_index)
-            if start_clock + 1 < graph.clock:
+            if start_clock + 2 < graph.clock:
                 return 1
-            else:
-                return 0
+    return 0
 
 
 def magic_check(graph):
